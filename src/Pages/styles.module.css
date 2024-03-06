@@ -1,0 +1,75 @@
+.Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .TopRow {
+    flex: 0 0 auto;
+    text-align: center;
+  }
+  .BottomRow {
+    flex: 1 1 auto;
+  }
+  
+  .Panel {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .PanelContent {
+    height: 100%;
+    width: 100%;
+    background-color: #192230; /* Hardcoded panel background color */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  
+  .ResizeHandleOuter {
+    flex: 0 0 1em;
+    position: relative;
+    outline: none;
+    background-color: transparent; /* Hardcoded background color */
+  }
+
+  .ResizeHandleInner {
+    position: absolute;
+    top: 0.25em;
+    bottom: 0.25em;
+    left: 0.25em;
+    right: 0.25em;
+    border-radius: 0.25em;
+    background-color: transparent; /* Hardcoded background color */
+    transition: background-color 0.2s linear;
+  }
+  
+  .Button {
+    color: #ffffff; /* Hardcoded text color */
+    background-color: #2a3343; /* Hardcoded button background color */
+    border: 1px solid #18181a; /* Hardcoded button border color */
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+  }
+  .Button:hover {
+    background-color: #454950; /* Hardcoded button background color on hover */
+  }
+  
+  .Link {
+    display: block;
+    color: #dcadff; /* Hardcoded link color */
+    margin-bottom: 0.5rem;
+  }
+  
+  .Icon {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    left: calc(50% - 0.5rem);
+    top: calc(50% - 0.5rem);
+  }

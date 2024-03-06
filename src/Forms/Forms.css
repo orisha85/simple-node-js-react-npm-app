@@ -1,0 +1,45 @@
+.dropdown {
+    background-color: #fff;
+}
+
+.mbsc-page {
+    background: #ffffff !important;
+  }
+  
+  .mbsc-form-grid{
+    margin: 0 !important;
+  }
+  
+  .mbsc-textfield-box{
+    background: #f5f4f4 !important;
+  }
+  
+  /* Reduce row spacing */
+  .mbsc-row {
+    margin-top: -10px !important;
+    margin-bottom: -10px !important; 
+  
+  }
+
+  .InputBoxText {
+    font-size: 12px; 
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .InputBoxTextBigger {
+    font-size: 14px; 
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .mbsc-label-inline {
+    color: #000; /* Change text color */
+    font-weight: bold; /* Make text bold */
+    width: fit-content;
+    margin-right: 10px;
+  }

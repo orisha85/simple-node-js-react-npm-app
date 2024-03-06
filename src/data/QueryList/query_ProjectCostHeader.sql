@@ -1,0 +1,1 @@
+SELECT [Project_Cost_Header_ID]  ,[Project_Version_ID] ,[Project_ID] ,[Tenant_CD] ,[Version_ID] ,[Section_ID] ,[Section_Desc] ,[Section_Notes] ,[Include_Subtotal] ,[CreatedBy] ,[CreatedDate] ,[ModifiedBy] ,[ModifiedDate] FROM [SMC_APP_DEV].[app_cpqt].[Project_Cost_Header] 

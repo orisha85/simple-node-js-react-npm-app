@@ -1,0 +1,159 @@
+body {
+    background-color: #fff;
+  }
+  
+  .tab-panel__header {
+    font-size: 12px;
+    position: relative;
+    top: 1px
+    
+  }
+  
+  .tab-panel__content {
+    background-color: #D5D5D5;
+    border: 1px solid #e7e7e7;
+    
+  } 
+  
+  .tab {
+    /*background-color: #D5D5D5; */
+    flex-grow: 1;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7; 
+    border-bottom: 1px solid #e7e7e7;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #96858F;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px 24px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 0;
+    margin-right: 10px;
+  }
+
+  .tab:hover {
+    background-color: #def1ff;
+  }
+  
+  .tab:nth-child(n+2) {
+      margin-left: -8px;
+  }
+    
+  .tab--selected {
+    /*border-bottom: 2px solid #0078d4;*/
+    /* color: #6D7993; */
+    background-color: #def1ff;
+    color: #5a5959;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 6px;
+    z-index: 1;
+  }
+
+/* Custom styles for the accordion */
+.custom-accordion .accordion-button {
+  background-color: #def1ff; /* Set the background color */
+  color: #333; /* Set the text color */
+  border-color: #9bd5ff; /* Set the border color */
+  padding: 0.5rem 1rem; /* Adjust padding to make the button slightly bigger */
+  font-size: 14px; /* Increase font size */
+}
+
+.custom-accordion .accordion-button:focus {
+  box-shadow: none; /* Remove the default focus box shadow */
+}
+
+.single-accordion {
+  margin-bottom: 3px;
+}
+
+.Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.TopRow {
+  flex: 0 0 auto;
+  text-align: center;
+}
+.BottomRow {
+  flex: 1 1 auto;
+}
+
+.Panel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.PanelContent {
+  height: 100%;
+  width: 100%;
+  background-color: #192230; /* Hardcoded panel background color */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem
+}
+
+.ResizeHandleOuter {
+  flex: 0 0 1.5em;
+  position: relative;
+  outline: none;
+  background-color: transparent; /* Hardcoded background color */
+  padding: 2%;
+}
+.ResizeHandleOuter[data-resize-handle-active] {
+  background-color: rgba(255, 255, 255, 0.2); /* Hardcoded background color */
+}
+
+.ResizeHandleInner {
+  position: absolute;
+  top: 0.25em;
+  bottom: 0.25em;
+  left: 0.25em;
+  right: 0.25em;
+  border-radius: 0.25em;
+  background-color: transparent; /* Hardcoded background color */
+  transition: background-color 0.2s linear;
+}
+
+.Button {
+  color: #ffffff; /* Hardcoded text color */
+  background-color: #2a3343; /* Hardcoded button background color */
+  border: 1px solid #18181a; /* Hardcoded button border color */
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+.Button:hover {
+  background-color: #454950; /* Hardcoded button background color on hover */
+}
+
+.Link {
+  display: block;
+  color: #dcadff; /* Hardcoded link color */
+  margin-bottom: 0.5rem;
+}
+
+.Icon {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  left: calc(50% - 0.5rem);
+  top: calc(50% - 0.5rem);
+}
+
+.AccordianBody {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+a:hover {
+  color: #0000ff; /* #0ab4ff */
+  font-size: 1.1rem;
+}
+.menu-anchor:hover {
+  background-color: #cafce1 !important;
+  font-weight: bolder;
+}
+
+.menu-label {
+  font-size: 13px;
+}
+
+/* button {
+  right: 20px;
+} */
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  opacity: 0.15;
+}
+a,
+
+
+.pro-sidebar > .pro-sidebar-inner {
+  color: #000000 !important;
+  background-color: #f8f8f8 !important;
+
+}
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover {
+  color: inherit; }
+
+.pro-sidebar .pro-menu .pro-menu-item.active {
+  color: inherit; }
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:focus {
+  outline: none;
+  color: inherit; }
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover .pro-icon-wrapper .pro-icon {
+  font-size: 18px; /* Adjust the desired font size */
+  animation: inherit
+}
+
+.rp-sidebar .sidebar-menu .sidebar-menu-item {
+  background-color: transparent; /* Set background color to transparent */
+}

@@ -1,0 +1,1 @@
+SELECT COALESCE((SELECT max([Project_ID])+1 FROM [app_main].[Project] WHERE [Project_ID]> cast((DATEPART(year, getdate())-2000) as bigint)*100000 + DATEPART(dayofyear, getdate())*100), cast((DATEPART(year, getdate())-2000) as bigint)*100000 + DATEPART(dayofyear, getdate())*100 +1)  as projectId

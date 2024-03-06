@@ -1,0 +1,1 @@
+SELECT [Project_Cost_Header_ID]  ,[SKU_Group] ,[Project_Version_ID] ,[Header_ID] ,[Project_ID]  ,[Tenant_CD]  ,[Total_Standard_Hour]   ,[Total_Override_Hour]  ,[MOB_Count]   ,[MOB_Count_Override] ,[Travel_Hour_Per_MOB]  ,[Travel_Labour_Per_MOB] ,[CreatedBy]  ,[CreatedDate]  ,[ModifiedBy]   ,[ModifiedDate] FROM [SMC_APP_DEV].[app_cpqt].[Project_Cost_Mobalization]

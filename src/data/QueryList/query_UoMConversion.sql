@@ -1,0 +1,1 @@
+SELECT [Unit_of_Measure_PK]  ,[UoM_Base]  ,[UoM_Base_Value] ,[UoM_Target] ,[UoM_Target_Value]  ,[CreatedBy]  ,[CreatedDate]  ,[ModifiedBy]  ,[ModifiedDate] FROM [SMC_APP_DEV].[ref_data].[UoM_Conversion] 
