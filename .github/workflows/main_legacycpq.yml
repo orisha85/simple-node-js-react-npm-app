@@ -14,7 +14,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    steps:
+
+
       - uses: actions/checkout@v4
 
       - name: Set up Node.js version
@@ -25,6 +26,7 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
+          npm build
 
       - name: Zip artifact for deployment
         run: Compress-Archive -Path * -DestinationPath release.zip
@@ -57,7 +59,7 @@ jobs:
           name: node-app
           
       - name: Unzip artifact for deployment
-        run: unzip ./release.zip -d ./temp
+        run: Expand-Archive -Path release.zip -DestinationPath ./temp
           
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
