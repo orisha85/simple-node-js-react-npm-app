@@ -1,7 +1,7 @@
 {
   "name": "cpq",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@mobiscroll/react": "^5.28.2",
     "@testing-library/jest-dom": "^5.17.0",

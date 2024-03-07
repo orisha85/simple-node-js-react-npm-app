@@ -24,12 +24,15 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-      
+
+      - name: Zip artifact for deployment
+        run: zip release.zip ./* -r
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: .
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -39,16 +42,19 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v2
+      with:
           name: node-app
-      
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
-        with:
-          app-name: 'LegacyCPQ'
-          slot-name: 'Production'
-          package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_38455017EA7F459C93D11D63741FA9EF }}
+          
+    - name: unzip artifact for deployment
+      run: unzip release.zip
+    
+    - name: 'Deploy to Azure Web App'
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'LegacyCPQ'
+        slot-name: 'Production'
+        package: .
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_38455017EA7F459C93D11D63741FA9EF }}
