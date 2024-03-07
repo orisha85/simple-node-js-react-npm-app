@@ -26,7 +26,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          CI=false npm run build
+          $env:CI = $false
+          npm run build
 
       - name: Zip artifact for deployment
         run: Compress-Archive -Path * -DestinationPath release.zip
