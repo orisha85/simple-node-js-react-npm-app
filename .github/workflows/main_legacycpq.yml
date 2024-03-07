@@ -16,6 +16,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - uses: actions/checkout@v4
 
       - name: Set up Node.js version
