@@ -38,8 +38,8 @@ jobs:
         with:
           name: node-app
           
-      - name: unzip artifact for deployment
-        run: Expand-Archive -Path release.zip -DestinationPath .
+      - name: Unzip artifact for deployment
+        run: Expand-Archive -Path release.zip -DestinationPath ./temp
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -54,18 +54,19 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v3
-      with:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
           name: node-app
           
-    - name: unzip artifact for deployment
-      run: unzip release.zip
-    
-    - name: 'Deploy to Azure Web App'
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'LegacyCPQ'
-        slot-name: 'Production'
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_38455017EA7F459C93D11D63741FA9EF }}
+      - name: Unzip artifact for deployment
+        run: Expand-Archive -Path release.zip -DestinationPath ./temp
+
+      - name: 'Deploy to Azure Web App'
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'LegacyCPQ'
+          slot-name: 'Production'
+          package: ./temp
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_38455017EA7F459C93D11D63741FA9EF }}
