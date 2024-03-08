@@ -44,7 +44,7 @@ jobs:
           name: node-app
           
       - name: Unzip artifact for deployment
-        run: unzip -Path release.zip -DestinationPath ./temp
+        run: unzip release.zip -d ./temp
 
   deploy:
     runs-on: ubuntu-latest
