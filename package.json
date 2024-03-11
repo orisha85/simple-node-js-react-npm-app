@@ -27,8 +27,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=8000 && react-scripts start && node src/index.js",
-    "build": "react-scripts build",
+    "start": "set PORT=8000 && react-scripts start && node server/server.js",
+    "build": "webpack --mode development --entry ./client/index.js --output ./static/bundle.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -59,7 +59,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "app_data.js",
+  "main": "server.js",
   "keywords": [],
   "author": "",
   "license": "ISC"
