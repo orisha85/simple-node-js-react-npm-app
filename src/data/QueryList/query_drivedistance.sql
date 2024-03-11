@@ -1,1 +1,0 @@
-SELECT [TC_SH_Record_CD] ,[Tenant_CD] ,[SH_ReferenceValueItem_CD]  ,[SH_Item_CD]   ,[SH_Item_Desc]   ,[TC_ReferenceValueItem_CD]   ,[TC_Item_CD]   ,[TC_Item_Desc]   ,[Distance_Hour]    ,[CreatedBy]  ,[CreatedDate] ,[ModifiedBy]  ,[ModifiedDate] FROM [SMC_APP_DEV].[ref_data].[DriveDistance] 

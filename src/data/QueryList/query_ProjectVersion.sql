@@ -1,1 +1,0 @@
-SELECT [Project_Version_ID] ,[Project_ID] ,[Version_ID] ,[Tenant_CD] ,[Is_Current] ,[Project_Name] ,[Project_Lifecycle_CD] ,[State_CD] ,[Region_CD] ,[TownCounty_Desc] ,[Quote_Type] ,[Project_Type] ,[Service_Hub] ,[Project_Start] ,[Duration] ,[Project_Number] ,[CreatedBy] ,[CreatedDate] ,[ModifiedBy] ,[ModifiedDate] FROM [SMC_APP_DEV].[app_cpqt].[Project_Version] 

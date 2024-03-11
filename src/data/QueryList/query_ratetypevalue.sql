@@ -1,1 +1,0 @@
-SELECT [RateTypeItem_CD]  ,[Tenant_CD] ,[Year_ID] ,[State_CD] ,[Rate_Type_CD] ,[Rate_Type_Desc] ,[Rate_Type_Value] ,[CreatedBy] FROM [SMC_APP_DEV].[ref_data].[RateTypeValue]
