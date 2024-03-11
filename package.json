@@ -27,7 +27,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=8000 && react-scripts start && node server/server.js",
+    "start": "set PORT=8000 && react-scripts start && node ./server/server.js",
     "build": "webpack --mode development --entry ./client/index.js --output ./static/bundle.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
