@@ -2,6 +2,9 @@
   "name": "cpq",
   "version": "0.1.0",
   "private": false,
+  "workspaces": [
+    "client"
+  ],
   "dependencies": {
     "@mobiscroll/react": "^5.28.2",
     "@testing-library/jest-dom": "^5.17.0",
@@ -27,7 +30,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=8000 && react-scripts start && node ./server/server.js",
+    "start:server": "set PORT=3008 && react-scripts start && node ./server/server.js",
+    "start:client": "cross-env PORT=3008 npm run start --workspace client",
+    "build:client": "npm run build --workspace client",
+    "start": "set PORT=3008 && react-scripts start && node ./server/server.js",
     "build": "webpack --mode development --entry ./client/index.js --output ./static/bundle.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -59,7 +65,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "server.js",
+  "main": "./server/server.js",
   "keywords": [],
   "author": "",
   "license": "ISC"
