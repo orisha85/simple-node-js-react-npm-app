@@ -1,0 +1,1 @@
+SELECT [Tenant_CD] ,[Tenant_Desc]  ,[Source_System]  ,[Status]  ,[CreatedBy]  ,[CreatedDate]  ,[ModifiedBy]  ,[ModifiedDate]  FROM [SMC_APP_DEV].[app_main].[Tenant]

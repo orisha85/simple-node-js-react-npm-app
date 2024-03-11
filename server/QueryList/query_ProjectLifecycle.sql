@@ -1,0 +1,1 @@
+SELECT [Project_Lifecycle_CD] ,[Project_Lifecycle_Order]  ,[Project_Lifecycle_Desc] ,[CreatedBy] ,[CreatedDate]  ,[ModifiedBy]   ,[ModifiedDate] FROM [SMC_APP_DEV].[app_cpqt].[Project_Lifecycle]
