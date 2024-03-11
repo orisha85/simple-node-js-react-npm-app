@@ -48,8 +48,8 @@ const delete_projectCostLineItem = require('./api/delete_projectCostLineItem');
 const create_new_project_id = require('./api/create_new_project_id');
 const exec_projectPriceLine = require('./api/exec_projectPriceLine');
 
-const PORT = 3000;
-const STATIC_ASSETS_PATH = path.resolve(`${__dirname}/../../static`);
+const PORT = 3008;
+//const STATIC_ASSETS_PATH = path.resolve(`${__dirname}/../../static`);
 
 // Serve front end assets which have been built by webpack
 app.use("/static", express.static(STATIC_ASSETS_PATH));
