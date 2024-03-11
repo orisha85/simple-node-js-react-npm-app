@@ -30,9 +30,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:server": "set PORT=3008 && react-scripts start && node ./server/server.js",
-    "start:client": "PORT=3008 npm run start --workspace client",
-    "build:client": "npm run build --workspace client",
+    "start:server": "set PORT=3008 && react-scripts start",
+    "build:client": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
