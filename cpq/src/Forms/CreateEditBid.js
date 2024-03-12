@@ -10,13 +10,8 @@ setOptions({
   themeVariant: 'light'
 });
 
-<<<<<<< HEAD
 function CreateEditBid({onRowClick, setSelectedBid, setSelectedBidVersion, selectedBid}) {
 //  const [loading, setLoading] = useState(true);
-=======
-function CreateEditBid({onRowClick, setSelectedBid, setSelectedBidVersion, selectedBid, setIsSidebarVisible }) {
-  const [loading, setLoading] = useState(true);
->>>>>>> 8a114399f16f35bde24a83a09961670a86f235d0
   const [states, setStates] = useState([]);
   const [region, setRegion] = useState([]);
   const [townCounty, setTownCounty] = useState([]);
