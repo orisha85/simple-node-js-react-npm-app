@@ -29,9 +29,6 @@ jobs:
           npm install
           $env:CI = $false
           npm run build
-          npm start 
-          npm run startserver
-
 
       - name: Zip artifact for deployment
         run: Compress-Archive -Path * -DestinationPath release.zip
