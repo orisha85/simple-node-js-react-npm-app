@@ -1,8 +1,8 @@
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3008;
 const path = require('path');
 
 module.exports = {
-  entry: './cpq/index.js',
+  entry: './cpq/app_data.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
