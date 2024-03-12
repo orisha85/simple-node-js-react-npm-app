@@ -1,15 +1,21 @@
+const path = require('path');
+
 module.exports = {
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				use: {
-					loader: '@sucrase/webpack-loader',
-					options: {
-						transforms: ['jsx']
-					}
-				}
-			}
-		]
-	}
+  entry: './cpq/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react']
+        }
+      }
+    ]
+  }
 };
