@@ -65,7 +65,6 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Set startup command
-        uses: Azure/cli@v1
-        with:
-          azcliversion: 2.0.72
-          inlineScript: az webapp config set --resource-group SMC_App --name LegacyCPQ --startup-file app_data.js
+        run: az webapp config set --resource-group SMC_App --name LegacyCPQ --startup-file app_data.js
+          env:
+            AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
