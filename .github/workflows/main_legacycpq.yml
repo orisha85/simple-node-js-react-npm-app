@@ -24,7 +24,6 @@ jobs:
           node-version: '20.x'
 
       - name: npm install, build, and test
-        uses: ./
         with: 
           working-directory: cpq
           build: $env:CI = $false, npm run build
