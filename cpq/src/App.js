@@ -5,7 +5,7 @@ import Sidebar from './Modules/Sidebar';
 import Page from './Pages/Page';
 import Homepage from './Pages/Homepage';
 import SettingsModal from './Pages/SettingsModal';
-import { createBrowserRouter, Route, NavLink, createRoutesFromElements } from 'react-router-dom'
+//import { createBrowserRouter, Route, NavLink, createRoutesFromElements } from 'react-router-dom'
 import Costing from './Pages/Costing';
 import Pricing from './Pages/Pricing'
 import Quotation from './Pages/Quotation';
@@ -21,6 +21,12 @@ const router = createBrowserRouter(
       <Route path="Bid Feedback" element={<BidFeedback/>} />
     </Route>
   )
+  src\App.js
+  Line 8:10:  'createBrowserRouter' is defined but never used       no-unused-vars
+  Line 8:31:  'Route' is defined but never used                     no-unused-vars
+  Line 8:38:  'NavLink' is defined but never used                   no-unused-vars
+  Line 8:47:  'createRoutesFromElements' is defined but never used  no-unused-vars
+
 ) */
 
 function App() {
