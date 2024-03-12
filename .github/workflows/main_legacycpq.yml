@@ -58,3 +58,9 @@ jobs:
           package: ./release.zip
           slot-app-settings: WEBSITE_RUN_FROM_PACKAGE=1
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_95B93BDF603342F592E9F34E15F77511 }}
+
+      - name: Set startup command
+        uses: Azure/cli@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: az webapp config set --resource-group SMC_App --name LegacyCPQ --startup-file app_data.js
