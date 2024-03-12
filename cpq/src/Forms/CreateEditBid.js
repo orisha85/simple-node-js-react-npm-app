@@ -25,6 +25,7 @@ function CreateEditBid({onRowClick, setSelectedBid, setSelectedBidVersion, selec
   const [selectedServiceHub, setSelectedServiceHub] = useState('');
   const [selectedBidType, setSelectedBidType] = useState('');
   const [formData, setFormData] = useState({}); // State to hold form data
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState();
