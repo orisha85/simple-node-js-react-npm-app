@@ -1,3 +1,4 @@
+const port = process.env.PORT || 8080;
 const path = require('path');
 
 module.exports = {
@@ -6,14 +7,20 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devServer:{
+	host:'localhost',
+	port:port,
+	historyApiFallback:true,
+	open:true
+	},
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          presets: ['react']
+		options: {
+			presets: ['@babel/preset-env', "@babel/preset-react"]
         }
       }
     ]
