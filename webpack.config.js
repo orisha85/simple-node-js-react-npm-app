@@ -2,19 +2,13 @@ const port = process.env.PORT || 3008;
 const path = require('path');
 
 module.exports = {
-  entry: './cpq/app_data.js',
+  entry: './server.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'server.js',
+    path: path.resolve(__dirname, 'wwwwroot')
   },
-  devServer:{
-	host:'localhost',
-	port:port,
-	historyApiFallback:true,
-	open:true
-	},
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -26,3 +20,5 @@ module.exports = {
     ]
   }
 };
+
+//Between my yml file, my package.json, and my server.js file
