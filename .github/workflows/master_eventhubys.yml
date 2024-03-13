@@ -52,8 +52,8 @@ jobs:
         id: 'id'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'NAME'
-          slot-name: 'SLOT'
-          publish-profile: 'SECRET'
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          app-name: 'eventhubYS'
+          slot-name: 'Production'
+          #publish-profile: 'SECRET'
+          package: .
           
