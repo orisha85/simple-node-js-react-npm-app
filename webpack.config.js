@@ -4,8 +4,8 @@ const path = require('path');
 module.exports = {
   entry: './server.js',
   output: {
-    filename: 'server.js',
-    path: path.resolve(__dirname, 'wwwwroot')
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -20,5 +20,3 @@ module.exports = {
     ]
   }
 };
-
-//Between my yml file, my package.json, and my server.js file
