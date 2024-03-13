@@ -27,7 +27,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start && node app_data.js",
+    "start": "react-scripts start && node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -62,7 +62,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "app_data.js",
+  "main": "server.js",
   "keywords": [],
   "author": "",
   "license": "ISC"

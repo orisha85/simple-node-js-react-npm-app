@@ -54,9 +54,9 @@ const corsOptions = {
     optionSuccessStatus: 200,
 }
 
-const app_data = express();
-app_data.use(express.json());
-app_data.use(cors(corsOptions))
+const server = express();
+server.use(express.json());
+server.use(cors(corsOptions))
 
 // Endpoint for project list
 //    app.get('/get_projects/:param1/:param2', async (req, res) => {
@@ -71,7 +71,7 @@ app_data.use(cors(corsOptions))
 // Endpoint for tenant list
 
 
-app_data.get('/get_tenants', async (req, res) => {
+server.get('/get_tenants', async (req, res) => {
     try {
         const result = await get_tenants();
         res.json(result);
@@ -80,7 +80,7 @@ app_data.get('/get_tenants', async (req, res) => {
     }
 });
 
-app_data.get('/create_new_project_id/', async (req, res) => {
+server.get('/create_new_project_id/', async (req, res) => {
     try {
         const result = await create_new_project_id();
         res.json(result);
@@ -90,7 +90,7 @@ app_data.get('/create_new_project_id/', async (req, res) => {
 });
 
 // Endpoint for project list
-app_data.get('/get_projects/:param_tenant', async (req, res) => {
+server.get('/get_projects/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_projects(param_tenant);
@@ -101,7 +101,7 @@ app_data.get('/get_projects/:param_tenant', async (req, res) => {
 });
 
 // Endpoint for SKU list
-app_data.get('/get_sku_item/:param_tenant', async (req, res) => {
+server.get('/get_sku_item/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_skuMaterial(param_tenant);
@@ -112,7 +112,7 @@ app_data.get('/get_sku_item/:param_tenant', async (req, res) => {
 });
 
 // Endpoint for SKU Group
-app_data.get('/get_sku_group/:param_tenant', async (req, res) => {
+server.get('/get_sku_group/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_sku_group(param_tenant);
@@ -123,7 +123,7 @@ app_data.get('/get_sku_group/:param_tenant', async (req, res) => {
 });
 
 // Endpoint for state
-app_data.get('/get_lov_state/:param_tenant', async (req, res) => {
+server.get('/get_lov_state/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_state(param_tenant);
@@ -135,7 +135,7 @@ app_data.get('/get_lov_state/:param_tenant', async (req, res) => {
 
 
 // Endpoint for activity
-app_data.get('/get_lov_activity/:param_tenant', async (req, res) => {
+server.get('/get_lov_activity/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_activity(param_tenant);
@@ -145,7 +145,7 @@ app_data.get('/get_lov_activity/:param_tenant', async (req, res) => {
     }
 });
 // Endpoint for bidtype
-app_data.get('/get_lov_bidtype/:param_tenant', async (req, res) => {
+server.get('/get_lov_bidtype/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_bidtype(param_tenant);
@@ -155,7 +155,7 @@ app_data.get('/get_lov_bidtype/:param_tenant', async (req, res) => {
     }
 });
 // Endpoint for jobtype
-app_data.get('/get_lov_jobtype/:param_tenant', async (req, res) => {
+server.get('/get_lov_jobtype/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_jobtype(param_tenant);
@@ -165,7 +165,7 @@ app_data.get('/get_lov_jobtype/:param_tenant', async (req, res) => {
     }
 });
 // Endpoint for region
-app_data.get('/get_lov_region/:param_tenant', async (req, res) => {
+server.get('/get_lov_region/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_region(param_tenant);
@@ -175,7 +175,7 @@ app_data.get('/get_lov_region/:param_tenant', async (req, res) => {
     }
 });
 // Endpoint for sku family
-app_data.get('/get_lov_skufamily/:param_tenant', async (req, res) => {
+server.get('/get_lov_skufamily/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_skufamily(param_tenant);
@@ -186,7 +186,7 @@ app_data.get('/get_lov_skufamily/:param_tenant', async (req, res) => {
 });
 
 // Endpoint for service hub
-app_data.get('/get_lov_service_hub/:param_tenant', async (req, res) => {
+server.get('/get_lov_service_hub/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_service_hub(param_tenant);
@@ -196,7 +196,7 @@ app_data.get('/get_lov_service_hub/:param_tenant', async (req, res) => {
     }
 });
 
-app_data.get('/get_lov_region_state/:param_tenant/:state', async (req, res) => {
+server.get('/get_lov_region_state/:param_tenant/:state', async (req, res) => {
     try {
         const state = req.params.state;
         const param_tenant = req.params.param_tenant;
@@ -208,7 +208,7 @@ app_data.get('/get_lov_region_state/:param_tenant/:state', async (req, res) => {
 });
 
 // Endpoint for cost line item
-app_data.get('/get_cost_line_item/:param_tenant/:projectVersion', async (req, res) => {
+server.get('/get_cost_line_item/:param_tenant/:projectVersion', async (req, res) => {
     try {
         const projectVersion = req.params.projectVersion;
         const param_tenant = req.params.param_tenant;
@@ -220,7 +220,7 @@ app_data.get('/get_cost_line_item/:param_tenant/:projectVersion', async (req, re
 });
 
 // Endpoint for projectVersion
-app_data.get('/get_project_information/:param_tenant/:projectID', async (req, res) => {
+server.get('/get_project_information/:param_tenant/:projectID', async (req, res) => {
     try {
         const projectID = req.params.projectID;
         
@@ -233,7 +233,7 @@ app_data.get('/get_project_information/:param_tenant/:projectID', async (req, re
 });
 
 // Endpoint for state
-app_data.get('/get_lov_town/:param_tenant', async (req, res) => {
+server.get('/get_lov_town/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_lov_town(param_tenant);
@@ -243,7 +243,7 @@ app_data.get('/get_lov_town/:param_tenant', async (req, res) => {
     }
 });
 // Endpoint for project list
-app_data.get('/get_ratetypevalue/:param_tenant', async (req, res) => {
+server.get('/get_ratetypevalue/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_ratetypevalue(param_tenant);
@@ -254,7 +254,7 @@ app_data.get('/get_ratetypevalue/:param_tenant', async (req, res) => {
 });
 
 // Endpoint for project list
-app_data.get('/get_labourstandards/:param_tenant', async (req, res) => {
+server.get('/get_labourstandards/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_labourstandards(param_tenant);
@@ -264,7 +264,7 @@ app_data.get('/get_labourstandards/:param_tenant', async (req, res) => {
     }
 });
 
-app_data.get('/get_ProjectVersion/:param_tenant/:project_id', async (req, res) => {
+server.get('/get_ProjectVersion/:param_tenant/:project_id', async (req, res) => {
     try {
         const project_id = req.params.project_id;
         const param_tenant = req.params.param_tenant;
@@ -275,7 +275,7 @@ app_data.get('/get_ProjectVersion/:param_tenant/:project_id', async (req, res) =
     }
 });
 
-app_data.get('/get_ProjectCostHeader/:param_tenant/:project_version_id', async (req, res) => {
+server.get('/get_ProjectCostHeader/:param_tenant/:project_version_id', async (req, res) => {
     try {
         const project_version_id = req.params.project_version_id;
         const param_tenant = req.params.param_tenant;
@@ -286,7 +286,7 @@ app_data.get('/get_ProjectCostHeader/:param_tenant/:project_version_id', async (
     }
 });
 
-// app_data.get('/get_ProjectCostLineItem/:param_tenant/:project_version_id', async (req, res) => {
+// server.get('/get_ProjectCostLineItem/:param_tenant/:project_version_id', async (req, res) => {
 //     try {
 //         const project_version_id = req.params.project_version_id;
 //         const param_tenant = req.params.param_tenant;
@@ -297,7 +297,7 @@ app_data.get('/get_ProjectCostHeader/:param_tenant/:project_version_id', async (
 //     }
 // });
 
-app_data.get('/get_ProjectCostMobalization/:param_tenant/:project_version_id', async (req, res) => {
+server.get('/get_ProjectCostMobalization/:param_tenant/:project_version_id', async (req, res) => {
     try {
         const project_version_id = req.params.project_version_id;
         const param_tenant = req.params.param_tenant;
@@ -308,7 +308,7 @@ app_data.get('/get_ProjectCostMobalization/:param_tenant/:project_version_id', a
     }
 });
 
-app_data.get('/get_ProjectPriceLineItem/:param_tenant/:project_version_id', async (req, res) => {
+server.get('/get_ProjectPriceLineItem/:param_tenant/:project_version_id', async (req, res) => {
     try {
         const project_version_id = req.params.project_version_id;
         const param_tenant = req.params.param_tenant;
@@ -319,7 +319,7 @@ app_data.get('/get_ProjectPriceLineItem/:param_tenant/:project_version_id', asyn
     }
 });
 
-// app_data.get('/get_skuMaterial/:param_tenant/', async (req, res) => {
+// server.get('/get_skuMaterial/:param_tenant/', async (req, res) => {
 //     try {
 //         const param_tenant = req.params.param_tenant;
 //         const result = await get_skuMaterial(param_tenant);
@@ -329,7 +329,7 @@ app_data.get('/get_ProjectPriceLineItem/:param_tenant/:project_version_id', asyn
 //     }
 // });
 
-app_data.get('/get_drivedistance/:param_tenant/', async (req, res) => {
+server.get('/get_drivedistance/:param_tenant/', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await get_drivedistance(param_tenant);
@@ -339,7 +339,7 @@ app_data.get('/get_drivedistance/:param_tenant/', async (req, res) => {
     }
 });
 
-app_data.get('/get_lov_town_region/:param_tenant/:Region', async (req, res) => {
+server.get('/get_lov_town_region/:param_tenant/:Region', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const Region = req.params.Region;
@@ -350,7 +350,7 @@ app_data.get('/get_lov_town_region/:param_tenant/:Region', async (req, res) => {
     }
 });
 
-app_data.get('/get_projectLifecycle', async (req, res) => {
+server.get('/get_projectLifecycle', async (req, res) => {
     try {
         const result = await get_projectLifecycle();
         res.json(result);
@@ -359,7 +359,7 @@ app_data.get('/get_projectLifecycle', async (req, res) => {
     }
 });
 
-app_data.get('/get_ProjectPriceSummary/:param_tenant/:project_version_id', async (req, res) => {
+server.get('/get_ProjectPriceSummary/:param_tenant/:project_version_id', async (req, res) => {
     try {
         const project_version_id = req.params.project_version_id;
         const param_tenant = req.params.param_tenant;
@@ -370,7 +370,7 @@ app_data.get('/get_ProjectPriceSummary/:param_tenant/:project_version_id', async
     }
 });
 
-// app_data.get('/get_projectValuation/:param_tenant', async (req, res) => {
+// server.get('/get_projectValuation/:param_tenant', async (req, res) => {
 //     try {
 //         const param_tenant = req.params.param_tenant;
 //         const result = await get_projectValuation(param_tenant, Region);
@@ -380,7 +380,7 @@ app_data.get('/get_ProjectPriceSummary/:param_tenant/:project_version_id', async
 //     }
 // });
 
-app_data.get('/lookup_labourstandards/:param_tenant/:Project_Type/:SKU_Family/:SKU_Activity', async (req, res) => {
+server.get('/lookup_labourstandards/:param_tenant/:Project_Type/:SKU_Family/:SKU_Activity', async (req, res) => {
     try {
         const Project_Type = req.params.Project_Type;
         const SKU_Family = req.params.SKU_Family;
@@ -393,7 +393,7 @@ app_data.get('/lookup_labourstandards/:param_tenant/:Project_Type/:SKU_Family/:S
     }
 });
 
-app_data.get('/lookup_UoM/:param_tenant/:UoM', async (req, res) => {
+server.get('/lookup_UoM/:param_tenant/:UoM', async (req, res) => {
     try {
         const UoM = req.params.UoM;
         const param_tenant = req.params.param_tenant;
@@ -404,7 +404,7 @@ app_data.get('/lookup_UoM/:param_tenant/:UoM', async (req, res) => {
     }
 });
 
-app_data.get('/lookup_skuMaterial/:param_tenant/:SKU_ID', async (req, res) => {
+server.get('/lookup_skuMaterial/:param_tenant/:SKU_ID', async (req, res) => {
     try {
         const SKU_ID = req.params.SKU_ID;
         const param_tenant = req.params.param_tenant;
@@ -415,7 +415,7 @@ app_data.get('/lookup_skuMaterial/:param_tenant/:SKU_ID', async (req, res) => {
     }
 });
 
-app_data.get('/lookup_UoMConversion/:param_tenant/', async (req, res) => {
+server.get('/lookup_UoMConversion/:param_tenant/', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         const result = await lookup_UoMConversion(param_tenant, state);
@@ -425,7 +425,7 @@ app_data.get('/lookup_UoMConversion/:param_tenant/', async (req, res) => {
     }
 });
 
-app_data.get('/lookup_drivedistance/:param_tenant/:ServiceHub/:TownCounty', async (req, res) => {
+server.get('/lookup_drivedistance/:param_tenant/:ServiceHub/:TownCounty', async (req, res) => {
     try {
         const ServiceHub = req.params.ServiceHub;
         const TownCounty = req.params.TownCounty;
@@ -438,7 +438,7 @@ app_data.get('/lookup_drivedistance/:param_tenant/:ServiceHub/:TownCounty', asyn
 });
 
 // Endpoint to merge project data
-app_data.post('/merge_project', async (req, res) => {
+server.post('/merge_project', async (req, res) => {
     try {
       const result = await merge_project(req.body);
       res.send(result);
@@ -449,7 +449,7 @@ app_data.post('/merge_project', async (req, res) => {
   });
   
 // Endpoint to merge project data
-app_data.post('/merge_projectCostHeader', async (req, res) => {
+server.post('/merge_projectCostHeader', async (req, res) => {
     try {
       const result = await merge_projectCostHeader(req.body);
       res.send(result);
@@ -460,7 +460,7 @@ app_data.post('/merge_projectCostHeader', async (req, res) => {
   });
   
 // Endpoint to merge project data
-app_data.post('/merge_projectCostLineItem', async (req, res) => {
+server.post('/merge_projectCostLineItem', async (req, res) => {
     try {
       const result = await merge_projectCostLineItem(req.body);
       res.send(result);
@@ -471,7 +471,7 @@ app_data.post('/merge_projectCostLineItem', async (req, res) => {
   });
 
   // Endpoint to merge project data
-app_data.post('/merge_projectCostMobalization', async (req, res) => {
+server.post('/merge_projectCostMobalization', async (req, res) => {
     try {
       const result = await merge_projectCostMobalization(req.body);
       res.send(result);
@@ -482,7 +482,7 @@ app_data.post('/merge_projectCostMobalization', async (req, res) => {
   });
   
 // Endpoint to merge project data
-app_data.post('/merge_projectVersion', async (req, res) => {
+server.post('/merge_projectVersion', async (req, res) => {
     try {
       const result = await merge_projectVersion(req.body);
       res.send(result);
@@ -493,7 +493,7 @@ app_data.post('/merge_projectVersion', async (req, res) => {
   });
 
 // Endpoint to merge project price summary
-app_data.post('/merge_projectPriceSummary', async (req, res) => {
+server.post('/merge_projectPriceSummary', async (req, res) => {
     try {
       const result = await merge_projectPriceSummary(req.body);
       res.send(result);
@@ -504,7 +504,7 @@ app_data.post('/merge_projectPriceSummary', async (req, res) => {
   });
  
 // Endpoint to merge project price line item data
-app_data.patch('/update_projectPriceLineItem/:projectPriceLineItem', async (req, res) => {
+server.patch('/update_projectPriceLineItem/:projectPriceLineItem', async (req, res) => {
     const line_item = req.params.projectPriceLineItem;
     const { field_name, field_value } = req.body;
     try {
@@ -517,7 +517,7 @@ app_data.patch('/update_projectPriceLineItem/:projectPriceLineItem', async (req,
   });
 
   // Endpoint to merge project version 
-app_data.patch('/update_projectVersion/:projectVersion', async (req, res) => {
+server.patch('/update_projectVersion/:projectVersion', async (req, res) => {
     const project_version = req.params.projectVersion;
     const { field_name, field_value } = req.body;
     try {
@@ -529,7 +529,7 @@ app_data.patch('/update_projectVersion/:projectVersion', async (req, res) => {
     }
   });
 
-  app_data.get('/get_projectValuation/:param_tenant', async (req, res) => {
+  server.get('/get_projectValuation/:param_tenant', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
         //console.log(param_tenant)
@@ -540,7 +540,7 @@ app_data.patch('/update_projectVersion/:projectVersion', async (req, res) => {
     }
 });
 
-app_data.post('/exec_projectPriceLine/:project_version_id', async (req, res) => {
+server.post('/exec_projectPriceLine/:project_version_id', async (req, res) => {
     try {
         const project_version_id = req.params.project_version_id;
         const result = await exec_projectPriceLine(project_version_id);
@@ -551,7 +551,7 @@ app_data.post('/exec_projectPriceLine/:project_version_id', async (req, res) => 
 });
 
 
-app_data.post('/delete_projectCostLineItem/:projectCostLineItem', async (req, res) => {
+server.post('/delete_projectCostLineItem/:projectCostLineItem', async (req, res) => {
     try {
         const projectCostLineItem = req.params.projectCostLineItem;
         const result = await delete_projectCostLineItem(projectCostLineItem);
@@ -561,7 +561,7 @@ app_data.post('/delete_projectCostLineItem/:projectCostLineItem', async (req, re
     }
 });
 
-app_data.get('/lookup_lifecycleDetails/:lifecycle_cd', async (req, res) => {
+server.get('/lookup_lifecycleDetails/:lifecycle_cd', async (req, res) => {
     try {
         const lifecycle_cd = req.params.lifecycle_cd;
         const result = await get_projectValuation(lifecycle_cd);
@@ -573,6 +573,6 @@ app_data.get('/lookup_lifecycleDetails/:lifecycle_cd', async (req, res) => {
 
 // Create more endpoints for other queries
 const PORT = config_url.port;
-app_data.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
