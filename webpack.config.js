@@ -2,7 +2,7 @@ const port = process.env.PORT || 3008;
 const path = require('path');
 
 module.exports = {
-  entry: './server.js',
+  entry: './src/App.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
