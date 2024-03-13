@@ -41,6 +41,13 @@ jobs:
           name: node-app
       - name: unzip artifact for deployment
         run: unzip release.zip
+        
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_B4EBCCA28D4B4CA4A0E36293F9E91EDB }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4AF88CB09EC4470094A6C4D83346E4AE }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3D6B641AA4304D6E814866B73AC5A7C9 }}
       - name: 'Deploy to Azure WebApp'
         id: 'id'
         uses: azure/webapps-deploy@v2
