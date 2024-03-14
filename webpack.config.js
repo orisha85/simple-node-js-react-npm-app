@@ -1,4 +1,4 @@
-const port = process.env.PORT || 3008;
+const port = process.env.PORT || 80;
 const path = require('path');
 
 module.exports = {
