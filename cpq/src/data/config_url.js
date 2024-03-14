@@ -1,4 +1,4 @@
-const port = 3008;
+const port = 80;
 module.exports = {
     port: `${port}`,
     url: `http://localhost:${port}`,
