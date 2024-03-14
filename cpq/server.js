@@ -69,7 +69,7 @@ server.use(cors(corsOptions))
 //        }
 //    });
 // Endpoint for tenant list
-
+server.use(express.static(path.join(__dirname, '../src/build')));
 
 server.get('/get_tenants', async (req, res) => {
     try {
