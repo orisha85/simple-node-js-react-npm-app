@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('node:path'); 
 const config_url = require('./src/data/config_url');
 const get_projects = require('./src/data/get_projects');
 const get_tenants = require('./src/data/get_tenants');
@@ -69,7 +70,7 @@ server.use(cors(corsOptions))
 //        }
 //    });
 // Endpoint for tenant list
-server.use(express.static(path.join(__dirname, '../src/build')));
+server.use(express.static(path.join(__dirname, '../build')));
 
 server.get('/get_tenants', async (req, res) => {
     try {
