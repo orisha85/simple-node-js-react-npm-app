@@ -59,3 +59,5 @@ jobs:
           slot-app-settings: WEBSITE_RUN_FROM_PACKAGE=1
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_95B93BDF603342F592E9F34E15F77511 }}
 
+      - name: Recursive copy build folder one level up
+        run: cp -r C:/home/site/wwwroot/build/* C:/home/site/wwwroot/
