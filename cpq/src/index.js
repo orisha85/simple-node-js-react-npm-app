@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './App.js';
+import reportWebVitals from './reportWebVitals.js';
 //eslint-disable-next-line
 //import Sidebar from './Modules/Sidebar'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
- 
   <div className="App">
     <App />
   </div>
-
-   
 );
 
 // If you want to start measuring performance in your app, pass a function
