@@ -28,7 +28,7 @@
     "node": "^20.0.1"
   },
   "scripts": {
-    "start": "PORT=80 react-scripts start && node server.js",
+    "start": "react-scripts start && node server.js",
     "build": "react-scripts build && npm install -g serve",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

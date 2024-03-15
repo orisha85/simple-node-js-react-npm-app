@@ -1,5 +1,5 @@
-const port = 80;
+const port = 443;
 module.exports = {
     port: `${port}`,
-    url: `http://localhost:${port}`,
+    url: `http://legacycpq.azurewebsites.net:${port}`,
 }
