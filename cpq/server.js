@@ -72,12 +72,12 @@ server.use(cors(corsOptions))
 // Endpoint for tenant list
 
 
-server.use(express.static(path.join(__dirname, '../build')));
+// server.use(express.static(path.join(__dirname, '../build')));
 
-// Serve 'index.html' for all routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build', 'index.html'));
-});
+// // Serve 'index.html' for all routes
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, './build', 'index.html'));
+// });
 
 server.get('/get_tenants', async (req, res) => {
     try {
