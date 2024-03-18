@@ -20,6 +20,7 @@ const get_skuMaterial = require('./src/data/get_skuMaterial');
 const get_cost_line_item = require('./src/data/get_projectCostLineItem');
 const get_ProjectPriceLineItem = require('./src/data/get_projectPriceLineItem');
 //const get_ProjectCostLineItem = require('./src/data/get_projectCostLineItem');
+const get_ProjectCostHeader = require('./src/data/get_ProjectCostHeader');
 const get_ProjectCostMobalization = require('./src/data/get_projectCostMobalization');
 const get_lov_sku_group = require('./src/data/get_lov_sku_group');
 const get_drivedistance = require('./src/data/get_drivedistance');
@@ -29,11 +30,12 @@ const get_projectLifecycle = require('./src/data/get_projectLifecycle');
 const get_projectPriceSummary = require('./src/data/get_projectPriceSummary');
 //const get_lookup_UoM = require('./src/data/get_lov_reference');
 const get_projectValuation = require('./src/data/get_projectValuation');
+const get_ratetypevalue = require('./src/data/get_ratetypevalue');
 const lookup_labourstandards = require('./src/data/lookup_labourstandards');
 const lookup_skuMaterial = require('./src/data/lookup_skuMaterial');
 const lookup_UoMConversion = require('./src/data/lookup_UoMConversion');
 const lookup_drivedistance = require('./src/data/lookup_drivedistance');
-const lookup_lifecycleDetails= require('./src/data/lookup_lifecycleDetails');
+//const lookup_lifecycleDetails= require('./src/data/lookup_lifecycleDetails');
 
 const merge_project = require('./src/data/merge_project');
 const merge_projectVersion = require('./src/data/merge_projectVersion');
@@ -72,7 +74,7 @@ server.use(cors(corsOptions))
 // Endpoint for tenant list
 
 
-// server.use(express.static(path.join(__dirname, '../build')));
+server.use(express.static(path.join(__dirname, '../build')));
 
 // // Serve 'index.html' for all routes
 // app.get('*', (req, res) => {
@@ -401,16 +403,16 @@ server.get('/lookup_labourstandards/:param_tenant/:Project_Type/:SKU_Family/:SKU
     }
 });
 
-server.get('/lookup_UoM/:param_tenant/:UoM', async (req, res) => {
-    try {
-        const UoM = req.params.UoM;
-        const param_tenant = req.params.param_tenant;
-        const result = await get_lookup_UoM(param_tenant, UoM);
-        res.json(result);
-    } catch (error) {
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-});
+// server.get('/lookup_UoM/:param_tenant/:UoM', async (req, res) => {
+//     try {
+//         const UoM = req.params.UoM;
+//         const param_tenant = req.params.param_tenant;
+//         const result = await lookup_UoM(param_tenant, UoM);
+//         res.json(result);
+//     } catch (error) {
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
 
 server.get('/lookup_skuMaterial/:param_tenant/:SKU_ID', async (req, res) => {
     try {
@@ -426,7 +428,7 @@ server.get('/lookup_skuMaterial/:param_tenant/:SKU_ID', async (req, res) => {
 server.get('/lookup_UoMConversion/:param_tenant/', async (req, res) => {
     try {
         const param_tenant = req.params.param_tenant;
-        const result = await lookup_UoMConversion(param_tenant, state);
+        const result = await lookup_UoMConversion(param_tenant);
         res.json(result);
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
