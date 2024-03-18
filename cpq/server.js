@@ -572,6 +572,7 @@ server.get('/lookup_lifecycleDetails/:lifecycle_cd', async (req, res) => {
     }
 });
 
+
 // Create more endpoints for other queries
 const PORT = config_url.port;
 server.listen(PORT, () => {
