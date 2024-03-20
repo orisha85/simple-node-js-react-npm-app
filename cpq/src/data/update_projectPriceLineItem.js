@@ -1,5 +1,5 @@
 //const { sql, express, bodyParser } = require('./dependencies');
-const sql = require('mssql');
+//const sql = require('mssql');
 //const express = require('mssql');
 //const app = express();
 const executeQuery = require('./executeQuery');

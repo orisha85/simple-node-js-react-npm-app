@@ -11,6 +11,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: 'LegacyCPQ'
   AZURE_WEBAPP_PACKAGE_PATH: './release.zip'
+  NODE_VERSION: '20.x'                # set this to the node version to use
 
 jobs:
   build:
