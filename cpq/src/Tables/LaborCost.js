@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Input, Page } from '@mobiscroll/react'; // Import the Table component
 import * as Helper from './HelperCosting';
 import './Tables.css';
-import config_url from '../../data/config_url';
+import config_url from '../data/config_url';
 
 const LabourCost = ({ selectedBid, isDisabled }) => {
     const el = useRef(null);

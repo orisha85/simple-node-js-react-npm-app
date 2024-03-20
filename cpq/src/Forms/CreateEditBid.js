@@ -3,7 +3,7 @@ import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import { Button, Input, Dropdown, Page, setOptions } from '@mobiscroll/react';
 import './Forms.css';
 import Loading from '../Pages/Loading'
-import config_url from '../../data/config_url';
+import config_url from '../data/config_url';
 
 setOptions({
   theme: 'ios',

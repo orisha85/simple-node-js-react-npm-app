@@ -12,7 +12,7 @@ import * as Helper from '../Tables/HelperCosting';
 import { Button, Input, Page } from '@mobiscroll/react'; // Import the Table component
 import Footer from '../Modules/Footer'
 import Loading from './Loading'
-import config_url from '../../data/config_url.js';
+import config_url from '../data/config_url.js';
 
 
 function Pricing({ selectedBid, setSelectedBidVersion, selectedBidVersion, buttonText, setButtonText, isDisabled, setDisabled, setSelectedBidLifecycle }) {

@@ -13,7 +13,7 @@ import * as Helper from '../Tables/HelperCosting';
 import { TabulatorFull as Tabulator } from "tabulator-tables";
 import Loading from './Loading'
 import Footer from '../Modules/Footer'
-import config_url from '../../data/config_url';
+import config_url from '../data/config_url';
 
 function Costing({selectedBid, selectedBidVersion, onSaveButtonClick, isDisabled, isAlertOpen, setAlertOpen, pageDestination, selectedBidLifecycle, setSelectedBidLifecycle}) {
 

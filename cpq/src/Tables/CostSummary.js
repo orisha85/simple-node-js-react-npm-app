@@ -5,7 +5,7 @@ import './BidTable.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Input, Page } from '@mobiscroll/react';
 import * as Helper from './HelperCosting';
-import config_url from '../../data/config_url';
+import config_url from '../data/config_url';
 
 const CostSummary = ({ selectedBid, isDisabled }) => {
     const el = useRef(null);

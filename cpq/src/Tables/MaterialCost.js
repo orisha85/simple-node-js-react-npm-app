@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 import { RiArrowGoBackLine, RiArrowGoForwardLine, RiMenuAddLine } from "react-icons/ri";
 import * as Helper from './HelperCosting';
 import './Tables.css'
-import config_url from '../../data/config_url';
+import config_url from '../data/config_url';
 
 const MaterialCostv1 = ({ selectedBid, isDisabled, setMaterialLoad, MaterialLoad}) => {
 
