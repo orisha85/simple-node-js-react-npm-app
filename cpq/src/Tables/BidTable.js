@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
 import "./BidTable.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import config_url from "../data/config_url";
+import config_url from "../../data/config_url.js";
 import Loading from '../Pages/Loading.js';
 
 const BidTable = ({ setRedirectToCosting, setSelectedBid, setSelectedBidVersion, setSelectedBidLifecycle, setIsSidebarVisible, selectedBid }) => {

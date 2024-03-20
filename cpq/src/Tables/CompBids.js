@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as Helper from './HelperCosting';
-import config_url from '../data/config_url';
+import config_url from '../../data/config_url';
 
 const CompBids = ({ selectedBid }) => {
   //const [projectVersion, setProjectVersion] = useState([]);

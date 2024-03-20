@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import './Forms.css';
 //import './BidTable.css';
 //import {editFieldValue} from './BidPricing';
-import config_url from '../data/config_url';
+import config_url from '../../data/config_url';
 
 function BidTable({ selectedBid, totalBidPrice, PriceLoad, setPriceLoad }) {
   const [projectVersion, setProjectVersion] = useState([]);
