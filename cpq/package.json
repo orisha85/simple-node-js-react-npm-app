@@ -31,7 +31,7 @@
     "start": "npm-run-all --parallel start:react start:node",
     "start:react": "react-scripts start",
     "start:node": "npx node@4 server.js",
-    "build": "react-scripts build && npm install -g serve",
+    "build": "react-scripts build && npm install –g create-react-app",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -65,7 +65,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "server.js",
+  "main": "src/index.js",
   "keywords": [],
   "author": "",
   "license": "ISC"
